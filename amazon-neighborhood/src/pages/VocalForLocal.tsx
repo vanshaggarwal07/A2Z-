@@ -187,7 +187,14 @@ export function VocalForLocal() {
       case 'price_low':  sorted.sort((a, b) => a.asking_price - b.asking_price); break
       case 'price_high': sorted.sort((a, b) => b.asking_price - a.asking_price); break
       case 'popularity': sorted.sort((a, b) => b.seller_rating - a.seller_rating); break
-      default: break
+      default:
+        // Default: deterministic shuffle different from Neighbourhood (sort by id hash reversed)
+        sorted.sort((a, b) => {
+          const hashA = a.id.split('').reduce((s, c) => s + c.charCodeAt(0), 0)
+          const hashB = b.id.split('').reduce((s, c) => s + c.charCodeAt(0), 0)
+          return hashB - hashA
+        })
+        break
     }
     return sorted
   }, [tabFilteredListings, sortBy, primeOnly, filterCategory])

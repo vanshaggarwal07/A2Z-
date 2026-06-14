@@ -4,11 +4,7 @@ import { useAppContext } from '../context/AppContext'
 import { useAuth } from '../context/AuthContext'
 
 /* ─────────────────── Banner carousel ─────────────────── */
-const BANNERS = [
-  { id: 1, bg: 'from-[#1a1a2e] to-[#0f3460]', eyebrow: 'Great Indian Sale', title: 'Up to 70% off on electronics & fashion', cta: 'Shop deals', to: '/neighborhood' },
-  { id: 2, bg: 'from-[#0a3d2b] to-[#0a6245]', eyebrow: 'Amazon Neighbourhood', title: 'Buy & sell local. AI graded. Amazon trust.', cta: 'Explore now', to: '/neighborhood' },
-  { id: 3, bg: 'from-[#1a2a0a] to-[#2d5a1b]', eyebrow: 'Green Credits', title: 'Earn credits on every sustainable transaction', cta: 'Learn more', to: '/account/green-credits' },
-]
+const BANNER_IMAGES = ['/A.png', '/B.png', '/C.png']
 
 /* ─────────────────── Category tiles (Amazon style grid) ─────────────────── */
 const CATEGORIES = [
@@ -123,16 +119,25 @@ function ProductCard({ product }: { product: (typeof ALL_PRODUCTS)[0] }) {
 /* ─────────────────── Hero Banner ─────────────────── */
 function HeroBanner() {
   const [current, setCurrent] = useState(0)
-  useEffect(() => { const t = setInterval(() => setCurrent(c => (c + 1) % BANNERS.length), 4000); return () => clearInterval(t) }, [])
-  const b = BANNERS[current]
+  useEffect(() => { const t = setInterval(() => setCurrent(c => (c + 1) % BANNER_IMAGES.length), 4000); return () => clearInterval(t) }, [])
+
+  const goNext = () => setCurrent(c => (c + 1) % BANNER_IMAGES.length)
+  const goPrev = () => setCurrent(c => (c - 1 + BANNER_IMAGES.length) % BANNER_IMAGES.length)
 
   return (
-    <div className={`relative bg-gradient-to-r ${b.bg} min-h-[220px] md:min-h-[280px] flex flex-col items-center justify-center text-center text-white px-6 transition-all duration-500`}>
-      <p className="text-xs font-semibold uppercase tracking-widest opacity-75 mb-2">{b.eyebrow}</p>
-      <h2 className="text-2xl md:text-4xl font-bold mb-4 max-w-2xl">{b.title}</h2>
-      <Link to={b.to} className="inline-flex items-center gap-2 bg-[#FF9900] hover:bg-[#e68900] text-black font-semibold px-6 py-2.5 rounded transition-colors text-sm">{b.cta}</Link>
+    <div className="relative w-full overflow-hidden" style={{ height: '400px' }}>
+      {BANNER_IMAGES.map((src, i) => (
+        <img
+          key={i}
+          src={src}
+          alt={`Banner ${i + 1}`}
+          className="absolute inset-0 w-full h-full object-fill transition-opacity duration-700"
+          style={{ opacity: i === current ? 1 : 0 }}
+        />
+      ))}
+      {/* Dots */}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-        {BANNERS.map((_, i) => (<button key={i} onClick={() => setCurrent(i)} aria-label={`Slide ${i+1}`} className={`h-1.5 rounded-full transition-all ${i === current ? 'w-6 bg-white' : 'w-1.5 bg-white/40'}`}/>))}
+        {BANNER_IMAGES.map((_, i) => (<button key={i} onClick={() => setCurrent(i)} aria-label={`Slide ${i+1}`} className={`h-2.5 rounded-full transition-all ${i === current ? 'w-7 bg-white' : 'w-2.5 bg-white/50'}`}/>))}
       </div>
     </div>
   )

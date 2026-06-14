@@ -296,6 +296,61 @@ export function Navbar({ locationArea = 'New Delhi 110001' }: NavbarProps) {
           {/* Right items */}
           <div className="flex items-center gap-1 flex-shrink-0 ml-1">
 
+            {/* Language selector */}
+            <div className="relative group/lang">
+              <button className="hidden md:flex items-center gap-1 hover:outline hover:outline-1 hover:outline-white rounded px-2 py-1 transition-all">
+                <img src="/indian flag.png" alt="IN" className="w-5 h-4 object-cover rounded-sm" />
+                <span className="text-sm font-bold text-white">EN</span>
+                <svg className="w-2.5 h-2.5 text-gray-400" fill="currentColor" viewBox="0 0 10 6">
+                  <path d="M0 0l5 6 5-6H0z"/>
+                </svg>
+              </button>
+              {/* Dropdown */}
+              <div className="absolute top-full right-0 mt-1 bg-white border border-gray-200 rounded shadow-xl p-4 w-56 hidden group-hover/lang:block z-50">
+                <p className="font-bold text-sm text-gray-900 mb-2">Change Language</p>
+                <label className="flex items-center gap-2 text-sm text-gray-800 mb-2 cursor-pointer">
+                  <input type="radio" name="lang" defaultChecked className="accent-[#FF9900]" />
+                  English - EN
+                </label>
+                <div className="border-t border-gray-200 my-2" />
+                <label className="flex items-center gap-2 text-sm text-gray-700 mb-1.5 cursor-pointer">
+                  <input type="radio" name="lang" className="accent-[#FF9900]" />
+                  हिन्दी - HI
+                </label>
+                <label className="flex items-center gap-2 text-sm text-gray-700 mb-1.5 cursor-pointer">
+                  <input type="radio" name="lang" className="accent-[#FF9900]" />
+                  தமிழ் - TA
+                </label>
+                <label className="flex items-center gap-2 text-sm text-gray-700 mb-1.5 cursor-pointer">
+                  <input type="radio" name="lang" className="accent-[#FF9900]" />
+                  తెలుగు - TE
+                </label>
+                <label className="flex items-center gap-2 text-sm text-gray-700 mb-1.5 cursor-pointer">
+                  <input type="radio" name="lang" className="accent-[#FF9900]" />
+                  ಕನ್ನಡ - KN
+                </label>
+                <label className="flex items-center gap-2 text-sm text-gray-700 mb-1.5 cursor-pointer">
+                  <input type="radio" name="lang" className="accent-[#FF9900]" />
+                  മലയാളം - ML
+                </label>
+                <label className="flex items-center gap-2 text-sm text-gray-700 mb-1.5 cursor-pointer">
+                  <input type="radio" name="lang" className="accent-[#FF9900]" />
+                  বাংলা - BN
+                </label>
+                <label className="flex items-center gap-2 text-sm text-gray-700 mb-1.5 cursor-pointer">
+                  <input type="radio" name="lang" className="accent-[#FF9900]" />
+                  मराठी - MR
+                </label>
+                <div className="border-t border-gray-200 my-2" />
+                <p className="text-xs text-gray-600 flex items-center gap-1">
+                  <span>🇮🇳</span> You are shopping on Amazon.in
+                </p>
+                <p className="text-xs text-[#007185] hover:text-[#CC0C39] hover:underline cursor-pointer mt-1">
+                  Change country/region
+                </p>
+              </div>
+            </div>
+
             {/* Green Credits pill */}
             <Link
               to="/account/green-credits"
@@ -303,11 +358,7 @@ export function Navbar({ locationArea = 'New Delhi 110001' }: NavbarProps) {
               aria-label={`Green Credits: ${totalCredits}`}
             >
               <div className="flex items-center gap-1">
-                <div className="w-4 h-4 rounded-full bg-[#0a6245] flex items-center justify-center flex-shrink-0">
-                  <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M17 8C8 10 5.9 16.17 3.82 19.54c-.23.39-.1.87.27 1.1.37.22.84.09 1.06-.29C7 17 9 13 17 11v3l4-4-4-4v2z"/>
-                  </svg>
-                </div>
+                <img src="/hilta hua leaf.gif" alt="Credits" className="w-8 h-8 object-contain flex-shrink-0" />
                 <span className="text-[#febd69] font-bold text-sm leading-none">{totalCredits}</span>
               </div>
               <span className="text-gray-400 text-[10px] leading-none mt-0.5">Credits</span>
@@ -338,25 +389,6 @@ export function Navbar({ locationArea = 'New Delhi 110001' }: NavbarProps) {
             <Link to="/orders" className="hidden md:flex flex-col text-xs hover:outline hover:outline-1 hover:outline-white rounded px-2 py-1 transition-all">
               <span className="text-gray-300 text-[10px] leading-none">Returns</span>
               <span className="font-bold text-sm leading-snug">&amp; Orders</span>
-            </Link>
-
-            {/* Wishlist */}
-            <Link
-              to="/account/wishlist"
-              className="hidden md:flex flex-col items-center hover:outline hover:outline-1 hover:outline-white rounded px-2 py-1 transition-all relative"
-              aria-label={`Wishlist: ${wishlist.length} items`}
-            >
-              <div className="relative">
-                <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
-                {wishlist.length > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-[#CC0C39] text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center leading-none">
-                    {wishlist.length}
-                  </span>
-                )}
-              </div>
-              <span className="text-[10px] leading-none text-gray-400 mt-0.5">Wishlist</span>
             </Link>
 
             {/* Cart */}

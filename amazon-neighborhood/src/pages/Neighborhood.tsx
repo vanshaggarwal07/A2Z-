@@ -261,15 +261,6 @@ export function Neighborhood() {
       <div className="bg-white border-b border-gray-200 px-5 py-2.5 sticky top-[88px] z-30">
         <div className="max-w-screen-2xl mx-auto">
 
-          {/* Location banner */}
-          <LocationBanner
-            permission={permission}
-            loading={loading}
-            area={area}
-            accuracy={accuracy}
-            onRequest={requestLocation}
-          />
-
           <div className="flex items-center justify-between gap-3 flex-wrap">
             {/* Listing-type tabs */}
             <div className="flex items-center gap-1.5 flex-wrap">

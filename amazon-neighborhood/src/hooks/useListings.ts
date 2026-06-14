@@ -468,6 +468,19 @@ export function useListings(options: UseListingsOptions = {}) {
       }
     }
 
+    // Enforce discount range: minimum 45%, maximum 91%
+    // Adjust original_price so that (1 - asking_price/original_price)*100 is in [45, 91]
+    list = list.map(l => {
+      if (l.listing_type === 'donate' || l.listing_type === 'exchange' || l.asking_price <= 0) return l
+      const currentDiscount = Math.round((1 - l.asking_price / l.original_price) * 100)
+      if (currentDiscount >= 45 && currentDiscount <= 91) return l
+      // Generate a deterministic discount between 45-91 based on listing id
+      const seed = l.id.split('').reduce((sum, ch) => sum + ch.charCodeAt(0), 0)
+      const targetDiscount = 45 + (seed % 47) // 45 to 91
+      const newOriginalPrice = Math.round(l.asking_price / (1 - targetDiscount / 100))
+      return { ...l, original_price: newOriginalPrice }
+    })
+
     // Stable sort: primary by distance, secondary by id for deterministic ordering
     return list.sort((a, b) => {
       const distDiff = a.distance_km - b.distance_km

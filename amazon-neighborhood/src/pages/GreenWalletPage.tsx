@@ -126,103 +126,79 @@ export function GreenWalletPage() {
         />
       </div>
 
-      <div className="max-w-3xl mx-auto px-4 space-y-8 mt-8">
+      <div className="max-w-screen-2xl mx-auto px-4 space-y-8 mt-8">
 
-        {/* ── Section 1: CO2 Prevention ── */}
-        <div ref={s1.ref} className={`rounded-2xl bg-white border border-green-100 p-6 shadow-sm transition-all duration-700 ${s1.visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="flex items-center gap-4">
-            <div className="w-16 h-16 rounded-full bg-[#e8f5e9] flex items-center justify-center flex-shrink-0">
-              <svg className={`w-8 h-8 text-[#0a6245] transition-transform duration-1000 ${s1.visible ? 'scale-100' : 'scale-0'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" />
-              </svg>
-            </div>
-            <div className="flex-1">
-              <h3 className="text-lg font-bold text-gray-900">CO₂ Prevention</h3>
-              <p className="text-sm text-gray-500">Carbon dioxide kept out of the atmosphere</p>
-            </div>
-            <div className="text-right">
-              <p className="text-3xl font-bold text-[#0a6245]">{s1.visible ? <AnimatedNumber value={parseFloat(totalCO2.toFixed(0))} /> : 0}</p>
-              <p className="text-xs text-gray-500">kg saved</p>
-            </div>
-          </div>
-        </div>
+        {/* ── Impact Stats Grid (2x2) ── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-        {/* ── Section 2: Landfill Prevention ── */}
-        <div ref={s2.ref} className={`rounded-2xl bg-white border border-green-100 p-6 shadow-sm transition-all duration-700 delay-100 ${s2.visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="flex items-center gap-4">
-            <div className="w-16 h-16 rounded-full bg-[#fff3e0] flex items-center justify-center flex-shrink-0">
-              <svg className={`w-8 h-8 text-[#e65100] transition-transform duration-1000 ${s2.visible ? 'scale-100' : 'scale-0'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
-              </svg>
-            </div>
-            <div className="flex-1">
-              <h3 className="text-lg font-bold text-gray-900">Landfill Prevention</h3>
-              <p className="text-sm text-gray-500">Items given a second life instead of waste</p>
-            </div>
-            <div className="text-right">
-              <p className="text-3xl font-bold text-[#e65100]">{s2.visible ? <AnimatedNumber value={itemsDiverted} /> : 0}</p>
-              <p className="text-xs text-gray-500">items saved</p>
+          {/* CO2 Prevention */}
+          <div ref={s1.ref} className={`rounded-2xl bg-white border border-green-100 p-6 shadow-sm transition-all duration-700 ${s1.visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 rounded-full bg-[#e8f5e9] flex items-center justify-center flex-shrink-0">
+                <img src="/co2.png" alt="CO2" className="w-8 h-8 object-contain" />
+              </div>
+              <div className="flex-1">
+                <h3 className="text-base font-bold text-gray-900">CO₂ Prevention</h3>
+                <p className="text-xs text-gray-500">Carbon dioxide kept out of the atmosphere</p>
+              </div>
+              <div className="text-right">
+                <p className="text-2xl font-bold text-[#0a6245]">{s1.visible ? <AnimatedNumber value={parseFloat(totalCO2.toFixed(0))} /> : 0}</p>
+                <p className="text-[10px] text-gray-500">kg saved</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* ── Section 3: Aquatic Life ── */}
-        <div ref={s3.ref} className={`rounded-2xl bg-white border border-blue-100 p-6 shadow-sm transition-all duration-700 delay-200 ${s3.visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="flex items-center gap-4">
-            <div className="w-16 h-16 rounded-full bg-[#e3f2fd] flex items-center justify-center flex-shrink-0">
-              <svg className={`w-8 h-8 text-[#1565C0] transition-transform duration-1000 ${s3.visible ? 'scale-100' : 'scale-0'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
-              </svg>
-            </div>
-            <div className="flex-1">
-              <h3 className="text-lg font-bold text-gray-900">Aquatic Life Protected</h3>
-              <p className="text-sm text-gray-500">Plastic waste prevented from entering oceans</p>
-            </div>
-            <div className="text-right">
-              <p className="text-3xl font-bold text-[#1565C0]">{s3.visible ? plasticPrevented : '0'}</p>
-              <p className="text-xs text-gray-500">kg plastic prevented</p>
+          {/* Landfill Prevention */}
+          <div ref={s2.ref} className={`rounded-2xl bg-white border border-green-100 p-6 shadow-sm transition-all duration-700 delay-100 ${s2.visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 rounded-full bg-[#fff3e0] flex items-center justify-center flex-shrink-0">
+                <img src="/landfill.png" alt="Landfill" className="w-8 h-8 object-contain" />
+              </div>
+              <div className="flex-1">
+                <h3 className="text-base font-bold text-gray-900">Landfill Prevention</h3>
+                <p className="text-xs text-gray-500">Items given a second life instead of waste</p>
+              </div>
+              <div className="text-right">
+                <p className="text-2xl font-bold text-[#e65100]">{s2.visible ? <AnimatedNumber value={itemsDiverted} /> : 0}</p>
+                <p className="text-[10px] text-gray-500">items saved</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* ── Section 4: Product Life Extended ── */}
-        <div ref={s4.ref} className={`rounded-2xl bg-white border border-purple-100 p-6 shadow-sm transition-all duration-700 delay-300 ${s4.visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="flex items-center gap-4">
-            <div className="w-16 h-16 rounded-full bg-[#f3e5f5] flex items-center justify-center flex-shrink-0">
-              <svg className={`w-8 h-8 text-[#7B1FA2] transition-transform duration-1000 ${s4.visible ? 'scale-100' : 'scale-0'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
-              </svg>
-            </div>
-            <div className="flex-1">
-              <h3 className="text-lg font-bold text-gray-900">Product Life Extended</h3>
-              <p className="text-sm text-gray-500">Average product lifespan extended by reselling</p>
-            </div>
-            <div className="text-right">
-              <p className="text-3xl font-bold text-[#7B1FA2]">{s4.visible ? <AnimatedNumber value={itemsDiverted * 18} /> : 0}</p>
-              <p className="text-xs text-gray-500">months extended</p>
+          {/* Product Life Extended */}
+          <div ref={s4.ref} className={`rounded-2xl bg-white border border-purple-100 p-6 shadow-sm transition-all duration-700 delay-200 ${s4.visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 rounded-full bg-[#f3e5f5] flex items-center justify-center flex-shrink-0">
+                <img src="/recycle.png" alt="Recycle" className="w-8 h-8 object-contain" />
+              </div>
+              <div className="flex-1">
+                <h3 className="text-base font-bold text-gray-900">Product Life Extended</h3>
+                <p className="text-xs text-gray-500">Average lifespan extended by reselling</p>
+              </div>
+              <div className="text-right">
+                <p className="text-2xl font-bold text-[#7B1FA2]">{s4.visible ? <AnimatedNumber value={itemsDiverted * 18} /> : 0}</p>
+                <p className="text-[10px] text-gray-500">months</p>
+              </div>
             </div>
           </div>
-          <div className="mt-4 bg-gray-100 rounded-full h-3 overflow-hidden">
-            <div className="h-full bg-gradient-to-r from-[#7B1FA2] to-[#CE93D8] rounded-full transition-all duration-1000" style={{ width: s4.visible ? `${Math.min(itemsDiverted * 10, 100)}%` : '0%' }} />
-          </div>
-          <p className="text-xs text-gray-500 mt-1 text-right">Avg +18 months per item</p>
-        </div>
 
-        {/* ── Section 5: Trees Saved ── */}
-        <div ref={s5.ref} className={`rounded-2xl bg-white border border-green-100 p-6 shadow-sm transition-all duration-700 delay-400 ${s5.visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="flex items-center gap-4">
-            <div className="w-16 h-16 rounded-full bg-[#e8f5e9] flex items-center justify-center flex-shrink-0">
-              <span className={`text-3xl transition-transform duration-1000 ${s5.visible ? 'scale-100' : 'scale-0'}`}>🌳</span>
-            </div>
-            <div className="flex-1">
-              <h3 className="text-lg font-bold text-gray-900">Trees Saved</h3>
-              <p className="text-sm text-gray-500">Equivalent trees worth of CO₂ absorption</p>
-            </div>
-            <div className="text-right">
-              <p className="text-3xl font-bold text-[#2E7D32]">{s5.visible ? <AnimatedNumber value={treesEquivalent} /> : 0}</p>
-              <p className="text-xs text-gray-500">trees equivalent</p>
+          {/* Trees Saved */}
+          <div ref={s5.ref} className={`rounded-2xl bg-white border border-green-100 p-6 shadow-sm transition-all duration-700 delay-300 ${s5.visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 rounded-full bg-[#e8f5e9] flex items-center justify-center flex-shrink-0">
+                <img src="/tree.png" alt="Trees" className="w-8 h-8 object-contain" />
+              </div>
+              <div className="flex-1">
+                <h3 className="text-base font-bold text-gray-900">Trees Saved</h3>
+                <p className="text-xs text-gray-500">Equivalent trees worth of CO₂ absorption</p>
+              </div>
+              <div className="text-right">
+                <p className="text-2xl font-bold text-[#2E7D32]">{s5.visible ? <AnimatedNumber value={treesEquivalent} /> : 0}</p>
+                <p className="text-[10px] text-gray-500">trees</p>
+              </div>
             </div>
           </div>
+
         </div>
 
         {/* ── Section 6: Your Rewards ── */}
