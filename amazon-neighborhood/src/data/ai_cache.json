@@ -1,0 +1,370 @@
+{
+  "lst-001": {
+    "grading": {
+      "condition_grade": "Good",
+      "condition_summary": "Baby monitor in good working condition with minor cosmetic scratches on the camera housing.",
+      "defects_detected": ["minor scratches on camera body"],
+      "estimated_category": "baby",
+      "estimated_product_name": "Philips Avent Baby Monitor",
+      "confidence_score": 0.82,
+      "recommended_disposition": "resell"
+    },
+    "triage": {
+      "recommended": "resell",
+      "reasoning": "Good condition electronics with clear buyer market — direct resell maximises recovery at minimal logistics cost.",
+      "resell_value_estimate": 1400,
+      "refurb_cost_estimate": 200,
+      "co2_saved_kg": 2.1,
+      "green_credits_earned": 45,
+      "cost_benefit_summary": "Resell → Estimated recovery ₹1,400 | CO₂ saved: 2.1kg | Green Credits: +45"
+    },
+    "pricing": {
+      "suggested_price": 1400,
+      "price_range": { "min": 1100, "max": 1700 },
+      "reasoning": "Electronics depreciate ~55% in 2 years; Good condition commands upper-mid range.",
+      "depreciation_percent": 56,
+      "resale_value_1yr": 620
+    },
+    "passport_narrative": {
+      "narrative": "This baby monitor has had two careful owners over 20 months. Both graded it Good at handoff — the most recent AI inspection found no functional defects and only minor cosmetic marks on the housing."
+    },
+    "listing_quality": {
+      "score": 78,
+      "main_issues": ["Could add more close-up photos of defects", "Description could mention battery health"],
+      "top_fix": "Add a photo clearly showing the scratch mentioned in defects to set buyer expectations and reduce returns.",
+      "returns_preventable": 3
+    }
+  },
+  "lst-002": {
+    "grading": {
+      "condition_grade": "Fair",
+      "condition_summary": "Running shoes show visible sole wear and minor scuffing — suitable for casual use, not intense training.",
+      "defects_detected": ["sole wear", "minor scuff on toe cap"],
+      "estimated_category": "fashion",
+      "estimated_product_name": "Nike Air Max Running Shoes",
+      "confidence_score": 0.76,
+      "recommended_disposition": "resell"
+    },
+    "triage": {
+      "recommended": "resell",
+      "reasoning": "Fair condition shoes still have market value for casual buyers — resell avoids landfill at low logistics cost.",
+      "resell_value_estimate": 400,
+      "refurb_cost_estimate": 150,
+      "co2_saved_kg": 1.4,
+      "green_credits_earned": 20,
+      "cost_benefit_summary": "Resell → Estimated recovery ₹400 | CO₂ saved: 1.4kg | Green Credits: +20"
+    },
+    "pricing": {
+      "suggested_price": 400,
+      "price_range": { "min": 280, "max": 550 },
+      "reasoning": "Fashion shoes in Fair condition depreciate 65–75%; casual buyer market sets price.",
+      "depreciation_percent": 67,
+      "resale_value_1yr": 120
+    },
+    "passport_narrative": {
+      "narrative": "These Nike running shoes have been used regularly by one owner for about 15 months. The AI inspection confirms visible but non-structural sole wear — ideal for everyday casual use at a great price."
+    },
+    "listing_quality": {
+      "score": 62,
+      "main_issues": ["No size chart included", "Return rate for this category is high (38%)", "Missing photo of sole wear clearly"],
+      "top_fix": "Add a size comparison chart — 38% of returns for running shoes are due to sizing, and a chart can prevent ~12 returns per month.",
+      "returns_preventable": 12
+    }
+  },
+  "lst-003": {
+    "grading": {
+      "condition_grade": "Good",
+      "condition_summary": "Wired earphones in good working condition with minor cable wear near the 3.5mm jack.",
+      "defects_detected": ["minor cable insulation wear near 3.5mm jack"],
+      "estimated_category": "electronics",
+      "estimated_product_name": "boAt Bassheads Wired Earphones",
+      "confidence_score": 0.79,
+      "recommended_disposition": "resell"
+    },
+    "triage": {
+      "recommended": "resell",
+      "reasoning": "Working electronics in Good condition have clear demand on local peer-to-peer — logistics-free resell maximises value.",
+      "resell_value_estimate": 900,
+      "refurb_cost_estimate": 0,
+      "co2_saved_kg": 1.2,
+      "green_credits_earned": 30,
+      "cost_benefit_summary": "Resell → Estimated recovery ₹900 | CO₂ saved: 1.2kg | Green Credits: +30"
+    },
+    "pricing": {
+      "suggested_price": 900,
+      "price_range": { "min": 700, "max": 1100 },
+      "reasoning": "Audio accessories retain 35–40% value in Good condition after 2 years.",
+      "depreciation_percent": 64,
+      "resale_value_1yr": 300
+    },
+    "passport_narrative": {
+      "narrative": "These boAt earphones have served one owner well for 2 years with only minor wear near the jack. All audio functions work perfectly — a solid buy for anyone wanting quality audio without the new price tag."
+    },
+    "listing_quality": {
+      "score": 71,
+      "main_issues": ["Missing photo of cable condition", "Could include audio test note in description"],
+      "top_fix": "Add a close-up photo of the cable condition to transparently address the defect and reduce return likelihood.",
+      "returns_preventable": 4
+    }
+  },
+  "lst-004": {
+    "grading": {
+      "condition_grade": "Good",
+      "condition_summary": "WiFi router fully functional with cosmetic yellowing on the casing — common for older routers.",
+      "defects_detected": ["cosmetic yellowing on casing"],
+      "estimated_category": "electronics",
+      "estimated_product_name": "TP-Link N300 WiFi Router",
+      "confidence_score": 0.81,
+      "recommended_disposition": "resell"
+    },
+    "triage": {
+      "recommended": "resell",
+      "reasoning": "Functional networking equipment has strong demand from budget buyers — resell at ₹700 is fair for this age and condition.",
+      "resell_value_estimate": 700,
+      "refurb_cost_estimate": 0,
+      "co2_saved_kg": 1.6,
+      "green_credits_earned": 25,
+      "cost_benefit_summary": "Resell → Estimated recovery ₹700 | CO₂ saved: 1.6kg | Green Credits: +25"
+    },
+    "pricing": {
+      "suggested_price": 700,
+      "price_range": { "min": 500, "max": 900 },
+      "reasoning": "Networking gear depreciates heavily after 4 years; Good function saves the price.",
+      "depreciation_percent": 61,
+      "resale_value_1yr": 200
+    },
+    "passport_narrative": {
+      "narrative": "This TP-Link router has reliably served one household for over 4 years with no resets needed. The only cosmetic change is casing yellowing — the networking performance remains solid for single-room coverage."
+    },
+    "listing_quality": {
+      "score": 68,
+      "main_issues": ["No ISP compatibility info", "Missing speed test screenshot"],
+      "top_fix": "Add ISP compatibility details — 41% of this router's returns are due to ISP incompatibility, which a simple note can prevent.",
+      "returns_preventable": 8
+    }
+  },
+  "lst-005": {
+    "grading": {
+      "condition_grade": "Good",
+      "condition_summary": "Android tablet with great screen condition, 89% battery health, and minor back scratches.",
+      "defects_detected": ["minor back scratches", "small corner nick"],
+      "estimated_category": "electronics",
+      "estimated_product_name": "Samsung Galaxy Tab A7 Lite",
+      "confidence_score": 0.85,
+      "recommended_disposition": "resell"
+    },
+    "triage": {
+      "recommended": "resell",
+      "reasoning": "Tablets in Good condition with strong battery health command premium in peer-to-peer market versus refurb cost.",
+      "resell_value_estimate": 6500,
+      "refurb_cost_estimate": 300,
+      "co2_saved_kg": 4.8,
+      "green_credits_earned": 80,
+      "cost_benefit_summary": "Resell → Estimated recovery ₹6,500 | CO₂ saved: 4.8kg | Green Credits: +80"
+    },
+    "pricing": {
+      "suggested_price": 6500,
+      "price_range": { "min": 5500, "max": 7500 },
+      "reasoning": "Tablets retain value well; 89% battery and good screen justify 43% of original price.",
+      "depreciation_percent": 57,
+      "resale_value_1yr": 3200
+    },
+    "passport_narrative": {
+      "narrative": "This Samsung tablet has been carefully maintained by one owner for nearly 4 years, retaining 89% battery health and a pristine screen. Only minor back cosmetic marks — functionally it performs like near-new."
+    },
+    "listing_quality": {
+      "score": 84,
+      "main_issues": ["Battery health stat should be in description", "Missing accessories list"],
+      "top_fix": "Prominently display the 89% battery health — tablet buyers consider battery a key factor and this will differentiate your listing.",
+      "returns_preventable": 5
+    }
+  },
+  "lst-009": {
+    "grading": {
+      "condition_grade": "Good",
+      "condition_summary": "Baby stroller in good condition with smooth folding mechanism and clean fabric — minor rust on wheel axles.",
+      "defects_detected": ["minor rust on wheel axles"],
+      "estimated_category": "baby",
+      "estimated_product_name": "Baby Stroller",
+      "confidence_score": 0.78,
+      "recommended_disposition": "resell"
+    },
+    "triage": {
+      "recommended": "resell",
+      "reasoning": "Baby gear in Good condition has high local demand and zero need for logistics — peer-to-peer resell is optimal.",
+      "resell_value_estimate": 3200,
+      "refurb_cost_estimate": 400,
+      "co2_saved_kg": 3.5,
+      "green_credits_earned": 65,
+      "cost_benefit_summary": "Resell → Estimated recovery ₹3,200 | CO₂ saved: 3.5kg | Green Credits: +65"
+    },
+    "pricing": {
+      "suggested_price": 3200,
+      "price_range": { "min": 2500, "max": 4000 },
+      "reasoning": "Baby strollers depreciate 50–60% over 3 years; Good condition with working mechanism commands mid-range.",
+      "depreciation_percent": 60,
+      "resale_value_1yr": 1200
+    },
+    "passport_narrative": {
+      "narrative": "This stroller served one family faithfully through 18 months of city use. The folding mechanism works smoothly and the fabric is clean — a trusted choice for growing families who value quality over new-at-any-price."
+    },
+    "listing_quality": {
+      "score": 73,
+      "main_issues": ["No video of folding mechanism", "Rust on axles should be shown clearly"],
+      "top_fix": "Add a short photo or note confirming the wheels still roll smoothly despite the axle rust — buyers of baby gear prioritise safety confirmation.",
+      "returns_preventable": 6
+    }
+  },
+  "lst-010": {
+    "grading": {
+      "condition_grade": "Good",
+      "condition_summary": "Baby monitor with working night vision and screen — small scratch on the side bezel only.",
+      "defects_detected": ["small scratch on side bezel"],
+      "estimated_category": "baby",
+      "estimated_product_name": "Motorola Baby Monitor with Camera",
+      "confidence_score": 0.83,
+      "recommended_disposition": "resell"
+    },
+    "triage": {
+      "recommended": "resell",
+      "reasoning": "Good condition baby monitor with night vision intact — high local demand from new parents makes resell optimal.",
+      "resell_value_estimate": 1100,
+      "refurb_cost_estimate": 150,
+      "co2_saved_kg": 1.9,
+      "green_credits_earned": 38,
+      "cost_benefit_summary": "Resell → Estimated recovery ₹1,100 | CO₂ saved: 1.9kg | Green Credits: +38"
+    },
+    "pricing": {
+      "suggested_price": 1100,
+      "price_range": { "min": 850, "max": 1350 },
+      "reasoning": "Baby monitors lose ~60% value in 2–3 years; Good working condition holds the mid-range.",
+      "depreciation_percent": 61,
+      "resale_value_1yr": 450
+    },
+    "passport_narrative": {
+      "narrative": "This Motorola baby monitor has been used by one careful owner for 2 years and retains all core functions including night vision. The only cosmetic issue is a small side-bezel scratch that doesn't affect use."
+    },
+    "listing_quality": {
+      "score": 76,
+      "main_issues": ["No night-vision screenshot shown", "Battery life claim missing"],
+      "top_fix": "Add a night vision capture to the photos — baby monitor buyers specifically check this feature and it reduces returns by ~7%.",
+      "returns_preventable": 5
+    }
+  },
+  "lst-012": {
+    "grading": {
+      "condition_grade": "Like New",
+      "condition_summary": "Handwoven jute tote in pristine condition — freshly crafted by local artisan.",
+      "defects_detected": [],
+      "estimated_category": "fashion",
+      "estimated_product_name": "Handwoven Jute Tote Bag",
+      "confidence_score": 0.94,
+      "recommended_disposition": "resell"
+    },
+    "triage": {
+      "recommended": "resell",
+      "reasoning": "Brand new artisan product with full value — direct resell at asking price is the only logical option.",
+      "resell_value_estimate": 450,
+      "refurb_cost_estimate": 0,
+      "co2_saved_kg": 0.8,
+      "green_credits_earned": 35,
+      "cost_benefit_summary": "Resell → Estimated recovery ₹450 | CO₂ saved: 0.8kg (vs synthetic bag) | Green Credits: +35"
+    },
+    "pricing": {
+      "suggested_price": 450,
+      "price_range": { "min": 400, "max": 550 },
+      "reasoning": "New artisan product; asking price matches market for handwoven jute bags.",
+      "depreciation_percent": 0,
+      "resale_value_1yr": 250
+    },
+    "passport_narrative": {
+      "narrative": "This jute tote is a first-sale artisan piece, handwoven with zero synthetic materials. Buying it directly supports a local maker and eliminates shipping carbon entirely — a better choice by every measure."
+    },
+    "listing_quality": {
+      "score": 91,
+      "main_issues": ["Could add weave detail close-up"],
+      "top_fix": "Add a photo of the weave texture and handle stitching to command premium pricing.",
+      "returns_preventable": 2
+    }
+  },
+  "lst-015": {
+    "grading": {
+      "condition_grade": "Good",
+      "condition_summary": "Mixer grinder with strong motor — one small jar has a hairline crack, other jars in perfect condition.",
+      "defects_detected": ["hairline crack in small jar"],
+      "estimated_category": "appliances",
+      "estimated_product_name": "Bajaj Mixer Grinder 750W",
+      "confidence_score": 0.80,
+      "recommended_disposition": "resell"
+    },
+    "triage": {
+      "recommended": "resell",
+      "reasoning": "Appliances with working motors command strong local resale; cracked jar is cosmetic and common.",
+      "resell_value_estimate": 900,
+      "refurb_cost_estimate": 100,
+      "co2_saved_kg": 2.8,
+      "green_credits_earned": 35,
+      "cost_benefit_summary": "Resell → Estimated recovery ₹900 | CO₂ saved: 2.8kg | Green Credits: +35"
+    },
+    "pricing": {
+      "suggested_price": 900,
+      "price_range": { "min": 700, "max": 1100 },
+      "reasoning": "Kitchen appliances depreciate ~60% over 4 years; working motor holds value despite cracked jar.",
+      "depreciation_percent": 59,
+      "resale_value_1yr": 300
+    },
+    "passport_narrative": {
+      "narrative": "This Bajaj mixer has powered 4 years of kitchen use with a still-strong 750W motor. One small jar has a hairline crack but the other two jars are perfect — excellent value for everyday cooking at a fraction of new price."
+    },
+    "listing_quality": {
+      "score": 69,
+      "main_issues": ["Hairline crack photo missing", "No motor sound description"],
+      "top_fix": "Add a clear photo of the cracked jar — transparent disclosure builds trust and prevents returns.",
+      "returns_preventable": 7
+    }
+  },
+  "seller_returns": {
+    "clusters": [
+      {
+        "cluster_name": "Size & Fit Mismatch",
+        "count": 67,
+        "severity": "high",
+        "example_reasons": ["Size runs small", "Different from size chart", "Fit not as described"],
+        "suggested_fix": "Add detailed measurements (chest, length, waist) to every fashion listing — not just size labels.",
+        "estimated_returns_prevented_if_fixed": 45
+      },
+      {
+        "cluster_name": "Product Condition Misrepresented",
+        "count": 38,
+        "severity": "high",
+        "example_reasons": ["More worn than photos showed", "Defect not mentioned", "Photos too edited"],
+        "suggested_fix": "Add at least one unedited natural-light photo and list every defect in bullet points — even minor ones.",
+        "estimated_returns_prevented_if_fixed": 28
+      },
+      {
+        "cluster_name": "Battery / Performance Below Expectation",
+        "count": 29,
+        "severity": "medium",
+        "example_reasons": ["Battery drains in 2 hours", "Performance slower than expected", "Doesn't hold charge"],
+        "suggested_fix": "Include battery health percentage for electronics and a usage demo note for appliances.",
+        "estimated_returns_prevented_if_fixed": 18
+      },
+      {
+        "cluster_name": "Compatibility Issues",
+        "count": 22,
+        "severity": "medium",
+        "example_reasons": ["Incompatible with my router", "Doesn't work with my phone", "Wrong pin type"],
+        "suggested_fix": "List compatible models/standards (e.g., ISP type, OS version, connector type) in every electronic listing.",
+        "estimated_returns_prevented_if_fixed": 15
+      },
+      {
+        "cluster_name": "Missing Accessories / Parts",
+        "count": 14,
+        "severity": "low",
+        "example_reasons": ["Charger not included", "Missing remote", "No original box"],
+        "suggested_fix": "Explicitly list what IS and IS NOT included — buyers assume everything is included unless told otherwise.",
+        "estimated_returns_prevented_if_fixed": 12
+      }
+    ]
+  }
+}

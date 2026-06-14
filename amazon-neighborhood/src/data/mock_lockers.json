@@ -1,0 +1,47 @@
+[
+  {
+    "id": "locker-cp-01",
+    "name": "Amazon Hub — Connaught Place",
+    "address": "Block A, Connaught Place, New Delhi 110001",
+    "lat": 28.6315,
+    "lng": 77.2167,
+    "hours": "Mon–Sun: 8am–10pm",
+    "slots_available": 12
+  },
+  {
+    "id": "locker-lnp-02",
+    "name": "Amazon Hub — Lajpat Nagar",
+    "address": "Central Market, Lajpat Nagar II, New Delhi 110024",
+    "lat": 28.5672,
+    "lng": 77.2430,
+    "hours": "Mon–Sun: 9am–9pm",
+    "slots_available": 8
+  },
+  {
+    "id": "locker-gn-03",
+    "name": "Amazon Hub — Greater Noida",
+    "address": "Alpha 1 Commercial Belt, Greater Noida 201310",
+    "lat": 28.4744,
+    "lng": 77.5040,
+    "hours": "Mon–Sat: 8am–8pm",
+    "slots_available": 15
+  },
+  {
+    "id": "locker-dws-04",
+    "name": "Amazon Hub — Dwarka Sector 10",
+    "address": "Pocket 7, Sector 10, Dwarka, New Delhi 110075",
+    "lat": 28.5921,
+    "lng": 77.0460,
+    "hours": "Mon–Sun: 7am–11pm",
+    "slots_available": 6
+  },
+  {
+    "id": "locker-rk-05",
+    "name": "Amazon Hub — Rohini Kalan",
+    "address": "Sector 9 Market, Rohini, New Delhi 110085",
+    "lat": 28.7041,
+    "lng": 77.1025,
+    "hours": "Mon–Sun: 8am–9pm",
+    "slots_available": 10
+  }
+]

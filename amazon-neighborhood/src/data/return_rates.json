@@ -1,0 +1,9 @@
+{
+  "shoes-running-42": { "return_rate": 38, "top_reason": "runs small — most buyers order one size up", "suggestion": "Try size 43", "category": "fashion" },
+  "kurta-cotton-m": { "return_rate": 29, "top_reason": "color looks different in person", "suggestion": "Check the 'In Natural Light' photo", "category": "fashion" },
+  "baby-monitor-basic": { "return_rate": 34, "top_reason": "battery life shorter than expected", "suggestion": "Check the extended battery model", "category": "electronics" },
+  "wifi-router-n300": { "return_rate": 41, "top_reason": "incompatible with ISP modem", "suggestion": "Check compatibility with your ISP first", "category": "electronics" },
+  "mixer-750w": { "return_rate": 22, "top_reason": "louder than expected", "suggestion": "Check decibel rating in specs", "category": "appliances" },
+  "tablet-android": { "return_rate": 31, "top_reason": "battery drains faster than advertised", "suggestion": "Check battery capacity in specs", "category": "electronics" },
+  "earphones-wired": { "return_rate": 27, "top_reason": "fit uncomfortable for some ear shapes", "suggestion": "Check the ear tip size options", "category": "electronics" }
+}

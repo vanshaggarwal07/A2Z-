@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+amazon-neighborhood/node_modules/
+
+# Environment variables (secrets)
+.env
+amazon-neighborhood/.env
+
+# Build output
+dist/
+amazon-neighborhood/dist/
+
+# IDE
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# SMOTE output files
+seller_chatbot_smote_balanced.csv
+seller_chatbot_hf_train.jsonl
+seller_chatbot_groq_finetune.jsonl
