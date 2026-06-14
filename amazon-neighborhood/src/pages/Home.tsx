@@ -15,7 +15,7 @@ const CATEGORIES = [
   { label: 'Baby & Kids', image: 'https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=300&q=80', to: '/neighborhood?cat=baby' },
   { label: 'Sports & Fitness', image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=300&q=80', to: '/neighborhood?cat=sports' },
   { label: 'Books', image: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300&q=80', to: '/neighborhood?cat=books' },
-  { label: 'Neighbourhood', image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=300&q=80', to: '/neighborhood' },
+  { label: 'Neighborhood', image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=300&q=80', to: '/neighborhood' },
 ]
 
 /* ─────────────────── Products ─────────────────── */
@@ -99,7 +99,7 @@ function ProductCard({ product }: { product: (typeof ALL_PRODUCTS)[0] }) {
         )}
         {/* Resale value */}
         <div className="mt-2 bg-[#f0f9f4] border border-[#d4edda] rounded-sm px-2 py-1.5 text-xs text-[#0a6245]">
-          Est. resale via Neighbourhood in 1 yr: <span className="font-semibold">₹{product.resaleValue.toLocaleString('en-IN')}</span>
+          Est. resale via Neighborhood in 1 yr: <span className="font-semibold">₹{product.resaleValue.toLocaleString('en-IN')}</span>
         </div>
       </div>
 
@@ -194,11 +194,11 @@ export function Home() {
         <ProductSection title="Sports & Fitness" products={sports} />
       </div>
 
-      {/* Neighbourhood CTA */}
+      {/* Neighborhood CTA */}
       <section className="max-w-screen-2xl mx-auto px-4 pb-6">
         <div className="bg-gradient-to-r from-[#0a6245] to-[#085436] rounded-lg p-6 text-white flex items-center justify-between">
           <div>
-            <p className="text-xs uppercase tracking-wider opacity-80 mb-1">Amazon Neighbourhood</p>
+            <p className="text-xs uppercase tracking-wider opacity-80 mb-1">Amazon Neighborhood</p>
             <h3 className="text-xl font-bold">Buy & sell pre-loved locally</h3>
             <p className="text-sm opacity-80 mt-1">AI-graded. Product Passport. Escrow protection. Green Credits.</p>
           </div>

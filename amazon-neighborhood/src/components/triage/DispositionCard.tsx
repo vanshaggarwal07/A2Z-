@@ -1,7 +1,7 @@
 import React from 'react'
 
 const DISPOSITIONS = [
-  { value: 'resell',    label: 'Resell',    desc: 'Peer-to-peer via Neighbourhood' },
+  { value: 'resell',    label: 'Resell',    desc: 'Peer-to-peer via Neighborhood' },
   { value: 'refurbish', label: 'Refurbish', desc: 'Send to partner refurbishment centre' },
   { value: 'donate',    label: 'Donate',    desc: 'Partner NGO list' },
   { value: 'recycle',   label: 'Recycle',   desc: 'E-waste pickup' },

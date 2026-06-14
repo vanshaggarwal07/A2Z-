@@ -508,7 +508,7 @@ export function ListItem() {
               </div>
             </div>
             <p className="text-sm text-gray-700">
-              {form.disposition === 'resell' && 'This product is in suitable condition for resale on Amazon Neighbourhood. It will reach a local buyer at a fair price.'}
+              {form.disposition === 'resell' && 'This product is in suitable condition for resale on Amazon Neighborhood. It will reach a local buyer at a fair price.'}
               {form.disposition === 'refurbish' && 'This product needs minor refurbishment before it can be resold. Amazon partners can restore it to sellable condition.'}
               {form.disposition === 'donate' && 'This product is best suited for donation. It can still be useful to someone in need.'}
               {form.disposition === 'recycle' && 'This product should be responsibly recycled. Due to its category or condition, it cannot be resold or donated.'}

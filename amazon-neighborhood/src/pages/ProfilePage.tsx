@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 export function ProfilePage() {
   const [name, setName] = useState('Demo User')
-  const [email, setEmail] = useState('demo@amazon-neighbourhood.in')
+  const [email, setEmail] = useState('demo@amazon-Neighborhood.in')
   const [phone, setPhone] = useState('+91 98765 43210')
   const [gender, setGender] = useState('Male')
   const [saved, setSaved] = useState(false)

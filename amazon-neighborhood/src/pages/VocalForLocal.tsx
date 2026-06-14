@@ -188,7 +188,7 @@ export function VocalForLocal() {
       case 'price_high': sorted.sort((a, b) => b.asking_price - a.asking_price); break
       case 'popularity': sorted.sort((a, b) => b.seller_rating - a.seller_rating); break
       default:
-        // Default: deterministic shuffle different from Neighbourhood (sort by id hash reversed)
+        // Default: deterministic shuffle different from Neighborhood (sort by id hash reversed)
         sorted.sort((a, b) => {
           const hashA = a.id.split('').reduce((s, c) => s + c.charCodeAt(0), 0)
           const hashB = b.id.split('').reduce((s, c) => s + c.charCodeAt(0), 0)

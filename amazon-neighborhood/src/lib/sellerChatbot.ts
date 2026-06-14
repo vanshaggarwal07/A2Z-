@@ -205,7 +205,7 @@ export async function getSellerChatResponse(
   if (GROQ_API_KEY) {
     try {
       const fewShot = getFewShotExamples(context.category, context.conditionGrade)
-      const systemPrompt = `You are ${context.sellerName}, selling "${context.productTitle}" on Amazon Neighbourhood.
+      const systemPrompt = `You are ${context.sellerName}, selling "${context.productTitle}" on Amazon Neighborhood.
 Product details: Price ₹${context.askingPrice} (original ₹${context.originalPrice}), condition: ${context.conditionGrade}.
 Condition summary: ${context.conditionSummary}
 Defects: ${context.defects.join(', ') || 'none'}

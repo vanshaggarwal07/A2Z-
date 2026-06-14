@@ -306,7 +306,7 @@ export function F3AITriageDashboard({ items }: { items: InventoryItem[] }) {
 function F4RelistModal({ card, onClose }: { card: TriageCard; onClose: () => void }) {
   const [grade, setGrade] = useState(card.col === 'Resell As-Is' ? 'Like New' : card.col === 'Refurbish' ? 'Good' : 'Fair')
   const [price, setPrice] = useState(card.price)
-  const [desc, setDesc] = useState(`This is a ${grade.toLowerCase()} condition item returned due to "${card.reason}". Fully functional. All original accessories included. Verified by Amazon Neighbourhood AI.`)
+  const [desc, setDesc] = useState(`This is a ${grade.toLowerCase()} condition item returned due to "${card.reason}". Fully functional. All original accessories included. Verified by Amazon Neighborhood AI.`)
   const [listType, setListType] = useState<'renewed' | 'used'>('used')
   const [publishing, setPublishing] = useState(false)
   const [published, setPublished] = useState(false)
@@ -322,7 +322,7 @@ function F4RelistModal({ card, onClose }: { card: TriageCard; onClose: () => voi
         <div style={{ textAlign: 'center', padding: 32 }}>
           <p style={{ fontSize: 32 }}>✓</p>
           <p style={{ fontWeight: 700, color: '#067D62', fontSize: 16 }}>Draft Published!</p>
-          <p style={{ color: '#555', fontSize: 13 }}>Listing live on Amazon Neighbourhood.</p>
+          <p style={{ color: '#555', fontSize: 13 }}>Listing live on Amazon Neighborhood.</p>
         </div>
       ) : (
         <>

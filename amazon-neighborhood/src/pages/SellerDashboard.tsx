@@ -630,7 +630,7 @@ export function SellerDashboard() {
             <div className="bg-white border border-gray-200 rounded p-5 mb-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <h2 className="font-bold text-[#0F1111] mb-1">Bulk Re-list to Neighbourhood</h2>
+                  <h2 className="font-bold text-[#0F1111] mb-1">Bulk Re-list to Neighborhood</h2>
                   <p className="text-sm text-gray-500">{items.filter(i => i.selected).length} of {items.length} selected — recover revenue by relisting returns locally</p>
                 </div>
                 <div className="flex gap-2">

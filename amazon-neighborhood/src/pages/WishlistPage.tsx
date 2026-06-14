@@ -13,9 +13,9 @@ export function WishlistPage() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
         </svg>
         <h2 className="text-xl font-bold text-gray-900 mb-2">Your wishlist is empty</h2>
-        <p className="text-gray-500 text-sm mb-6">Save items you love from Neighbourhood</p>
+        <p className="text-gray-500 text-sm mb-6">Save items you love from Neighborhood</p>
         <Link to="/neighborhood" className="bg-[#FF9900] text-black font-bold px-6 py-3 rounded text-sm hover:bg-[#e68900] transition-colors">
-          Browse Neighbourhood
+          Browse Neighborhood
         </Link>
       </main>
     )

@@ -166,7 +166,7 @@ export function ListingDetail() {
     return (
       <div className="max-w-screen-xl mx-auto px-4 py-8 text-center">
         <p className="text-gray-500">Listing not found.</p>
-        <Link to="/neighborhood" className="text-[#007185] hover:underline mt-2 inline-block">Back to Neighbourhood</Link>
+        <Link to="/neighborhood" className="text-[#007185] hover:underline mt-2 inline-block">Back to Neighborhood</Link>
       </div>
     )
   }
@@ -255,7 +255,7 @@ export function ListingDetail() {
       <nav aria-label="Breadcrumb" className="text-xs text-[#007185] mb-3 flex items-center gap-1 flex-wrap">
         <Link to="/" className="hover:underline">Home</Link>
         <span>›</span>
-        <Link to="/neighborhood" className="hover:underline">Neighbourhood</Link>
+        <Link to="/neighborhood" className="hover:underline">Neighborhood</Link>
         <span>›</span>
         <span className="text-gray-500 truncate max-w-[250px]">{listing.title}</span>
       </nav>
@@ -472,10 +472,10 @@ export function ListingDetail() {
               {listing.seller_rating > 4 && (
                 <div className="mt-1.5 relative group/seller inline-flex items-center gap-1 bg-[#f0f9f4] border border-[#c3e6cb] rounded-full px-2.5 py-1">
                   <svg className="w-3.5 h-3.5 text-[#067D62]" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
-                  <span className="text-[11px] font-semibold text-[#067D62]">Verified Neighbourhood Seller</span>
+                  <span className="text-[11px] font-semibold text-[#067D62]">Verified Neighborhood Seller</span>
                   {/* Tooltip */}
                   <span className="absolute bottom-full left-0 mb-2 w-52 bg-[#131921] text-white text-[11px] rounded-lg px-3 py-2 opacity-0 group-hover/seller:opacity-100 transition-opacity pointer-events-none shadow-lg z-10">
-                    Rated by verified buyers on Amazon Neighbourhood. This seller has a rating above 4.0 with consistent positive reviews.
+                    Rated by verified buyers on Amazon Neighborhood. This seller has a rating above 4.0 with consistent positive reviews.
                   </span>
                 </div>
               )}

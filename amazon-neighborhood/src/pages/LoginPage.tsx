@@ -162,7 +162,7 @@ export function LoginPage() {
           <button className="text-[#0066c0] hover:underline">Privacy Notice</button>
           <button className="text-[#0066c0] hover:underline">Help</button>
         </div>
-        <p>Amazon Neighbourhood, India</p>
+        <p>Amazon Neighborhood, India</p>
       </div>
     </div>
   )

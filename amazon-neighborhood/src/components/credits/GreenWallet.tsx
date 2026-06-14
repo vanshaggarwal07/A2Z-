@@ -133,7 +133,7 @@ export function GreenWallet() {
           </div>
           <div className="ml-auto text-right">
             <p className="text-xs text-gray-400">amazon</p>
-            <p className="text-xs text-[#FF9900] font-bold">Neighbourhood</p>
+            <p className="text-xs text-[#FF9900] font-bold">Neighborhood</p>
           </div>
         </div>
         <p className="text-sm text-gray-700 leading-relaxed">

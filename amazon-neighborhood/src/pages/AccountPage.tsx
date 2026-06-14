@@ -71,7 +71,7 @@ export function AccountPage() {
         </div>
         <div>
           <p className="font-bold text-gray-900 text-lg">Demo User</p>
-          <p className="text-sm text-gray-500">demo@amazon-neighbourhood.in</p>
+          <p className="text-sm text-gray-500">demo@amazon-Neighborhood.in</p>
           <p className="text-xs text-[#007185]">Amazon verified customer since 2020</p>
         </div>
       </div>

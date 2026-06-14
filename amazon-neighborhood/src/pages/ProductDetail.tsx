@@ -186,9 +186,9 @@ export function ProductDetail() {
 
           {/* Resale value */}
           <div className="bg-[#f0f9f4] border border-[#c3e6cb] rounded-xl px-4 py-3 text-sm text-[#0a6245]">
-            <span className="font-semibold">Est. resale value via Neighbourhood in 1 year:</span>{' '}
+            <span className="font-semibold">Est. resale value via Neighborhood in 1 year:</span>{' '}
             <span className="font-bold text-base">₹{product.resaleValue.toLocaleString('en-IN')}</span>
-            <p className="text-xs text-[#0a6245]/70 mt-0.5">Buy smart — track and resell later on Amazon Neighbourhood.</p>
+            <p className="text-xs text-[#0a6245]/70 mt-0.5">Buy smart — track and resell later on Amazon Neighborhood.</p>
           </div>
 
           {/* Specs */}
@@ -309,9 +309,9 @@ export function ProductDetail() {
 
             {/* Resell nudge */}
             <div className="bg-[#f0f9f4] border border-[#c3e6cb] rounded-lg p-3 text-xs text-[#0a6245] mt-1">
-              <p className="font-semibold mb-0.5">📦 Resell later on Neighbourhood</p>
+              <p className="font-semibold mb-0.5">📦 Resell later on Neighborhood</p>
               <p>Est. value in 1 yr: <strong>₹{product.resaleValue.toLocaleString('en-IN')}</strong></p>
-              <Link to="/neighborhood" className="text-[#007185] hover:underline font-medium mt-1 inline-block">Explore Neighbourhood →</Link>
+              <Link to="/neighborhood" className="text-[#007185] hover:underline font-medium mt-1 inline-block">Explore Neighborhood →</Link>
             </div>
           </div>
         </div>

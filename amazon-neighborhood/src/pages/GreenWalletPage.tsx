@@ -224,7 +224,7 @@ export function GreenWalletPage() {
         <div ref={s7.ref} className={`rounded-2xl bg-white border border-gray-200 p-6 shadow-sm transition-all duration-700 ${s7.visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <h3 className="text-lg font-bold text-gray-900 mb-4">Your Impact on Products</h3>
           {creditsLog.length === 0 ? (
-            <p className="text-sm text-gray-500 text-center py-6">No products bought or sold yet. Start shopping on Neighbourhood!</p>
+            <p className="text-sm text-gray-500 text-center py-6">No products bought or sold yet. Start shopping on Neighborhood!</p>
           ) : (
             <div className="space-y-3">
               {creditsLog.slice(0, 8).map((entry, i) => (
@@ -310,7 +310,7 @@ export function GreenWalletPage() {
           <p className="text-2xl font-bold text-[#0a6245] mb-2">Keep Going, Planet Hero! 🌱</p>
           <p className="text-sm text-gray-500 mb-4">Every second-hand purchase makes a difference</p>
           <a href="/neighborhood" className="inline-block bg-[#FF9900] hover:bg-[#e68900] text-black font-bold px-8 py-3 rounded-full text-sm transition-colors">
-            Browse Neighbourhood
+            Browse Neighborhood
           </a>
         </div>
       </div>

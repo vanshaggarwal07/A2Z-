@@ -36,7 +36,7 @@ export function Checkout() {
     return (
       <div className="max-w-screen-2xl mx-auto px-4 py-8 text-center">
         <p className="text-gray-500">Listing not found.</p>
-        <Link to="/neighborhood" className="text-[#007185] hover:underline mt-2 inline-block">Back to Neighbourhood</Link>
+        <Link to="/neighborhood" className="text-[#007185] hover:underline mt-2 inline-block">Back to Neighborhood</Link>
       </div>
     )
   }
@@ -214,7 +214,7 @@ export function Checkout() {
                 )}
               </div>
               <div className="flex justify-between"><span className="text-gray-600">GST (18%)</span><span>+₹{tax.toLocaleString('en-IN')}</span></div>
-              <div className="flex justify-between text-[#0a6245]"><span>Neighbourhood discount (5%)</span><span>-₹{discount.toLocaleString('en-IN')}</span></div>
+              <div className="flex justify-between text-[#0a6245]"><span>Neighborhood discount (5%)</span><span>-₹{discount.toLocaleString('en-IN')}</span></div>
               <div className="border-t border-gray-200 pt-2 mt-2 flex justify-between font-bold text-lg">
                 <span>Order Total</span>
                 <span className="text-[#CC0C39]">₹{grandTotal.toLocaleString('en-IN')}</span>

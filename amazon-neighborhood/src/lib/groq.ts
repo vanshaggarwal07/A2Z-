@@ -159,7 +159,7 @@ Response: Here are earphones available near you under ₹1,000!
 {"category":"electronics","max_price":1000,"keywords":["earphones"],"listing_type_preference":"any"}
 
 User: "show me baby strollers"
-Response: Found baby strollers listed in your neighbourhood!
+Response: Found baby strollers listed in your Neighborhood!
 {"category":"baby","max_price":null,"keywords":["stroller"],"listing_type_preference":"any"}
 
 User: "kuch free mein mil sakta hai kya?"

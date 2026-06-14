@@ -33,7 +33,7 @@ async function reverseGeocode(lat: number, lng: number): Promise<string> {
     if (!res.ok) return 'Your Location'
     const data = await res.json()
     const a = data.address || {}
-    const parts = [a.suburb || a.neighbourhood || a.village, a.city || a.town || a.county]
+    const parts = [a.suburb || a.Neighborhood || a.village, a.city || a.town || a.county]
       .filter(Boolean)
     return parts.join(', ') || 'Your Location'
   } catch {
