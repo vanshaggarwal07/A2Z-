@@ -1,0 +1,17 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - cd amazon-neighborhood
+        - npm ci
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: amazon-neighborhood/dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - amazon-neighborhood/node_modules/**/*
