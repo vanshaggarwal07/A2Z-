@@ -12,7 +12,9 @@
     "purchase_date": "Oct 2023",
     "condition_grade": "Good",
     "condition_summary": "Fully functional, minor surface scratches on camera housing. Original charger included.",
-    "defects": ["minor scratches on camera body"],
+    "defects": [
+      "minor scratches on camera body"
+    ],
     "listing_type": "resell",
     "images": [
       "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=400&q=80",
@@ -20,7 +22,7 @@
       "https://images.unsplash.com/photo-1522771930-78848d9293e8?w=400&q=80"
     ],
     "location_lat": 28.6189,
-    "location_lng": 77.2090,
+    "location_lng": 77.209,
     "location_area": "Karol Bagh",
     "distance_km": 1.8,
     "status": "active",
@@ -63,15 +65,18 @@
     "purchase_date": "Mar 2024",
     "condition_grade": "Fair",
     "condition_summary": "Visible sole wear, insoles replaced. Still good for casual use.",
-    "defects": ["sole wear", "minor scuff on toe"],
+    "defects": [
+      "sole wear",
+      "minor scuff on toe"
+    ],
     "listing_type": "resell",
     "images": [
       "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=80",
       "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=400&q=80",
       "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=400&q=80"
     ],
-    "location_lat": 28.6250,
-    "location_lng": 77.2140,
+    "location_lat": 28.625,
+    "location_lng": 77.214,
     "location_area": "Rajouri Garden",
     "distance_km": 2.3,
     "status": "active",
@@ -105,7 +110,9 @@
     "purchase_date": "Jun 2023",
     "condition_grade": "Good",
     "condition_summary": "Works perfectly. Minor cable insulation wear near jack.",
-    "defects": ["minor cable wear near 3.5mm jack"],
+    "defects": [
+      "minor cable wear near 3.5mm jack"
+    ],
     "listing_type": "resell",
     "images": [
       "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&q=80",
@@ -147,15 +154,17 @@
     "purchase_date": "Jan 2022",
     "condition_grade": "Good",
     "condition_summary": "Fully functional, no resets needed. Upgraded to Mesh system.",
-    "defects": ["cosmetic yellowing on casing"],
+    "defects": [
+      "cosmetic yellowing on casing"
+    ],
     "listing_type": "resell",
     "images": [
       "https://images.unsplash.com/photo-1562408590-e32931084e23?w=400&q=80",
       "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&q=80",
       "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80"
     ],
-    "location_lat": 28.6350,
-    "location_lng": 77.1990,
+    "location_lat": 28.635,
+    "location_lng": 77.199,
     "location_area": "Punjabi Bagh",
     "distance_km": 4.2,
     "status": "active",
@@ -189,7 +198,10 @@
     "purchase_date": "Aug 2022",
     "condition_grade": "Good",
     "condition_summary": "Screen in great condition, battery health 89%. Original charger included.",
-    "defects": ["minor back scratches", "small nick on corner"],
+    "defects": [
+      "minor back scratches",
+      "small nick on corner"
+    ],
     "listing_type": "resell",
     "images": [
       "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400&q=80",
@@ -197,7 +209,7 @@
       "https://images.unsplash.com/photo-1553949345-eb786bb3f7ba?w=400&q=80"
     ],
     "location_lat": 28.6039,
-    "location_lng": 77.2190,
+    "location_lng": 77.219,
     "location_area": "Hauz Khas",
     "distance_km": 5.7,
     "status": "active",
@@ -219,48 +231,6 @@
     ]
   },
   {
-    "id": "lst-006",
-    "seller_id": "usr-006",
-    "seller_name": "Neha P.",
-    "seller_rating": 4.6,
-    "seller_since": 2020,
-    "title": "Cotton Printed Kurta — Size M",
-    "category": "fashion",
-    "original_price": 800,
-    "asking_price": 250,
-    "purchase_date": "Feb 2025",
-    "condition_grade": "Like New",
-    "condition_summary": "Worn twice, washed gently. No stains or tears.",
-    "defects": [],
-    "listing_type": "resell",
-    "images": [
-      "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=400&q=80",
-      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&q=80",
-      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=400&q=80"
-    ],
-    "location_lat": 28.6178,
-    "location_lng": 77.2040,
-    "location_area": "Paharganj",
-    "distance_km": 0.9,
-    "status": "active",
-    "is_local_artisan": false,
-    "serial_number": "SN-KURTA-20250201",
-    "resale_value_1yr": 80,
-    "green_credits": 15,
-    "return_rate_key": "kurta-cotton-m",
-    "passport_nodes": [
-      {
-        "owner_alias": "Neha P.",
-        "owned_from": "Feb 2025",
-        "owned_until": "Jun 2026",
-        "condition_at_transfer": "Like New",
-        "grade_at_transfer": "Like New",
-        "reason_for_transfer": "Wrong size ordered",
-        "is_original_purchase": true
-      }
-    ]
-  },
-  {
     "id": "lst-007",
     "seller_id": "usr-007",
     "seller_name": "Ritu S.",
@@ -273,7 +243,9 @@
     "purchase_date": "Nov 2024",
     "condition_grade": "Good",
     "condition_summary": "Regular use, handles intact. Small ink mark inside.",
-    "defects": ["small ink mark inside"],
+    "defects": [
+      "small ink mark inside"
+    ],
     "listing_type": "resell",
     "images": [
       "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&q=80",
@@ -281,7 +253,7 @@
       "https://images.unsplash.com/photo-1591561954557-26941169b49e?w=400&q=80"
     ],
     "location_lat": 28.6289,
-    "location_lng": 77.2250,
+    "location_lng": 77.225,
     "location_area": "Connaught Place",
     "distance_km": 1.5,
     "status": "active",
@@ -315,15 +287,17 @@
     "purchase_date": "Dec 2022",
     "condition_grade": "Good",
     "condition_summary": "Well maintained, no fading. All buttons intact.",
-    "defects": ["light fade on elbows"],
+    "defects": [
+      "light fade on elbows"
+    ],
     "listing_type": "resell",
     "images": [
       "https://images.unsplash.com/photo-1551537482-f2075a1d41f2?w=400&q=80",
       "https://images.unsplash.com/photo-1622470953794-aa9c70b0fb9d?w=400&q=80",
       "https://images.unsplash.com/photo-1559551409-dadc959f76b8?w=400&q=80"
     ],
-    "location_lat": 28.6480,
-    "location_lng": 77.2340,
+    "location_lat": 28.648,
+    "location_lng": 77.234,
     "location_area": "Civil Lines",
     "distance_km": 6.8,
     "status": "active",
@@ -357,15 +331,17 @@
     "purchase_date": "Apr 2023",
     "condition_grade": "Good",
     "condition_summary": "Used for 18 months. Folding mechanism works smoothly. Fabric clean.",
-    "defects": ["minor rust on wheel axles"],
+    "defects": [
+      "minor rust on wheel axles"
+    ],
     "listing_type": "resell",
     "images": [
       "https://images.unsplash.com/photo-1519689680058-324335c77eba?w=400&q=80",
       "https://images.unsplash.com/photo-1561143869-b8e2e4d18a0f?w=400&q=80",
       "https://images.unsplash.com/photo-1502781252888-9143ba7f074e?w=400&q=80"
     ],
-    "location_lat": 28.5890,
-    "location_lng": 77.1990,
+    "location_lat": 28.589,
+    "location_lng": 77.199,
     "location_area": "Vasant Kunj",
     "distance_km": 7.4,
     "status": "active",
@@ -382,48 +358,6 @@
         "condition_at_transfer": "Good",
         "grade_at_transfer": "Good",
         "reason_for_transfer": "Child too big for stroller",
-        "is_original_purchase": true
-      }
-    ]
-  },
-  {
-    "id": "lst-010",
-    "seller_id": "usr-010",
-    "seller_name": "Arjun T.",
-    "seller_rating": 4.7,
-    "seller_since": 2020,
-    "title": "Motorola Halo+ Baby Monitor with Camera",
-    "category": "baby",
-    "original_price": 2800,
-    "asking_price": 1100,
-    "purchase_date": "Sep 2023",
-    "condition_grade": "Good",
-    "condition_summary": "Night vision works. Screen has tiny scratch, not on display area.",
-    "defects": ["small scratch on side bezel"],
-    "listing_type": "resell",
-    "images": [
-      "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=400&q=80",
-      "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&q=80",
-      "https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=400&q=80"
-    ],
-    "location_lat": 28.6060,
-    "location_lng": 77.2250,
-    "location_area": "Lajpat Nagar",
-    "distance_km": 2.9,
-    "status": "active",
-    "is_local_artisan": false,
-    "serial_number": "SN-MOTO-20230901",
-    "resale_value_1yr": 450,
-    "green_credits": 38,
-    "return_rate_key": "baby-monitor-basic",
-    "passport_nodes": [
-      {
-        "owner_alias": "Arjun T.",
-        "owned_from": "Sep 2023",
-        "owned_until": "Jun 2026",
-        "condition_at_transfer": "Good",
-        "grade_at_transfer": "Good",
-        "reason_for_transfer": "Baby no longer needs monitoring",
         "is_original_purchase": true
       }
     ]
@@ -448,8 +382,8 @@
       "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80",
       "https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=400&q=80"
     ],
-    "location_lat": 28.6220,
-    "location_lng": 77.2110,
+    "location_lat": 28.622,
+    "location_lng": 77.211,
     "location_area": "Karol Bagh",
     "distance_km": 0.7,
     "status": "active",
@@ -466,48 +400,6 @@
         "condition_at_transfer": "Like New",
         "grade_at_transfer": "Like New",
         "reason_for_transfer": "Donating to help another family",
-        "is_original_purchase": true
-      }
-    ]
-  },
-  {
-    "id": "lst-012",
-    "seller_id": "usr-012",
-    "seller_name": "Leela Arts",
-    "seller_rating": 5.0,
-    "seller_since": 2024,
-    "title": "Handwoven Jute Tote Bag — Natural",
-    "category": "fashion",
-    "original_price": 450,
-    "asking_price": 450,
-    "purchase_date": "Jun 2026",
-    "condition_grade": "Like New",
-    "condition_summary": "Handcrafted by local artisan. Zero waste material. First sale.",
-    "defects": [],
-    "listing_type": "resell",
-    "images": [
-      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&q=80",
-      "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&q=80",
-      "https://images.unsplash.com/photo-1591561954555-26941169b49e?w=400&q=80"
-    ],
-    "location_lat": 28.6160,
-    "location_lng": 77.2070,
-    "location_area": "Dilli Haat",
-    "distance_km": 1.1,
-    "status": "active",
-    "is_local_artisan": true,
-    "serial_number": "SN-JUTE-20260601",
-    "resale_value_1yr": 250,
-    "green_credits": 35,
-    "return_rate_key": null,
-    "passport_nodes": [
-      {
-        "owner_alias": "Leela Arts",
-        "owned_from": "Jun 2026",
-        "owned_until": null,
-        "condition_at_transfer": "Like New",
-        "grade_at_transfer": "Like New",
-        "reason_for_transfer": "New listing by artisan",
         "is_original_purchase": true
       }
     ]
@@ -575,7 +467,7 @@
       "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400&q=80"
     ],
     "location_lat": 28.6145,
-    "location_lng": 77.2060,
+    "location_lng": 77.206,
     "location_area": "Dilli Haat",
     "distance_km": 0.5,
     "status": "active",
@@ -609,7 +501,9 @@
     "purchase_date": "May 2022",
     "condition_grade": "Good",
     "condition_summary": "Motor runs strong. One small jar has hairline crack. Other jars perfect.",
-    "defects": ["hairline crack in small jar"],
+    "defects": [
+      "hairline crack in small jar"
+    ],
     "listing_type": "resell",
     "images": [
       "https://images.unsplash.com/photo-1585515320310-259814833e62?w=400&q=80",
@@ -617,7 +511,7 @@
       "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=80"
     ],
     "location_lat": 28.6418,
-    "location_lng": 77.2190,
+    "location_lng": 77.219,
     "location_area": "Model Town",
     "distance_km": 4.9,
     "status": "active",
@@ -651,15 +545,17 @@
     "purchase_date": "Apr 2023",
     "condition_grade": "Good",
     "condition_summary": "All 3 speeds work. Grille has minor dent. Bought new AC.",
-    "defects": ["minor dent on grille"],
+    "defects": [
+      "minor dent on grille"
+    ],
     "listing_type": "resell",
     "images": [
       "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&q=80",
       "https://images.unsplash.com/photo-1555680202-c86f0e12f086?w=400&q=80",
       "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80"
     ],
-    "location_lat": 28.6510,
-    "location_lng": 77.2290,
+    "location_lat": 28.651,
+    "location_lng": 77.229,
     "location_area": "Shalimar Bagh",
     "distance_km": 8.1,
     "status": "active",
@@ -693,7 +589,9 @@
     "purchase_date": "Mar 2024",
     "condition_grade": "Good",
     "condition_summary": "Heats quickly, no hot spots. Sole plate clean.",
-    "defects": ["cord slightly kinked near plug"],
+    "defects": [
+      "cord slightly kinked near plug"
+    ],
     "listing_type": "resell",
     "images": [
       "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80",
@@ -701,7 +599,7 @@
       "https://images.unsplash.com/photo-1585515320310-259814833e62?w=400&q=80"
     ],
     "location_lat": 28.5999,
-    "location_lng": 77.2390,
+    "location_lng": 77.239,
     "location_area": "Greater Kailash",
     "distance_km": 3.8,
     "status": "active",
@@ -718,92 +616,6 @@
         "condition_at_transfer": "Good",
         "grade_at_transfer": "Good",
         "reason_for_transfer": "Got steam iron",
-        "is_original_purchase": true
-      }
-    ]
-  },
-  {
-    "id": "lst-018",
-    "seller_id": "usr-003",
-    "seller_name": "Amit S.",
-    "seller_rating": 4.9,
-    "seller_since": 2018,
-    "title": "Exchange: Sony Earphones for Noise-Cancelling",
-    "category": "electronics",
-    "original_price": 2500,
-    "asking_price": 0,
-    "purchase_date": "Jan 2024",
-    "condition_grade": "Good",
-    "condition_summary": "Sony MDR earphones in good condition. Want noise-cancelling or ₹800 store credit.",
-    "defects": ["minor cable wear"],
-    "listing_type": "exchange",
-    "exchange_want": "Noise-cancelling earphones (any brand) or ₹800 store credit",
-    "images": [
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&q=80",
-      "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=400&q=80",
-      "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=400&q=80"
-    ],
-    "location_lat": 28.6099,
-    "location_lng": 77.2295,
-    "location_area": "South Delhi",
-    "distance_km": 3.1,
-    "status": "active",
-    "is_local_artisan": false,
-    "serial_number": "SN-SONY-20240101",
-    "resale_value_1yr": 0,
-    "green_credits": 20,
-    "return_rate_key": null,
-    "passport_nodes": [
-      {
-        "owner_alias": "Amit S.",
-        "owned_from": "Jan 2024",
-        "owned_until": "Jun 2026",
-        "condition_at_transfer": "Good",
-        "grade_at_transfer": "Good",
-        "reason_for_transfer": "Wants upgrade",
-        "is_original_purchase": true
-      }
-    ]
-  },
-  {
-    "id": "lst-019",
-    "seller_id": "usr-002",
-    "seller_name": "Priya R.",
-    "seller_rating": 4.2,
-    "seller_since": 2021,
-    "title": "Exchange: Running Shoes Size 42 for Size 43",
-    "category": "fashion",
-    "original_price": 1200,
-    "asking_price": 0,
-    "purchase_date": "Mar 2024",
-    "condition_grade": "Fair",
-    "condition_summary": "Adidas shoes size 42. Want size 43 same or similar model, any condition.",
-    "defects": ["sole wear"],
-    "listing_type": "exchange",
-    "exchange_want": "Running shoes size 43 (Adidas/Nike/Puma)",
-    "images": [
-      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=80",
-      "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=400&q=80",
-      "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=400&q=80"
-    ],
-    "location_lat": 28.6250,
-    "location_lng": 77.2140,
-    "location_area": "Rajouri Garden",
-    "distance_km": 2.3,
-    "status": "active",
-    "is_local_artisan": false,
-    "serial_number": "SN-SHOE-EX-20240301",
-    "resale_value_1yr": 0,
-    "green_credits": 15,
-    "return_rate_key": null,
-    "passport_nodes": [
-      {
-        "owner_alias": "Priya R.",
-        "owned_from": "Mar 2024",
-        "owned_until": "Jun 2026",
-        "condition_at_transfer": "Fair",
-        "grade_at_transfer": "Fair",
-        "reason_for_transfer": "Wrong size",
         "is_original_purchase": true
       }
     ]
@@ -829,8 +641,8 @@
       "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80",
       "https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=400&q=80"
     ],
-    "location_lat": 28.6220,
-    "location_lng": 77.2110,
+    "location_lat": 28.622,
+    "location_lng": 77.211,
     "location_area": "Karol Bagh",
     "distance_km": 0.7,
     "status": "active",

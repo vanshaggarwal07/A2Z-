@@ -138,7 +138,7 @@ export function ListingCard({ listing }: { listing: Listing }) {
         <p className="mt-1.5 text-[11px] text-gray-500 truncate">
           Sold by <span className="text-gray-700 font-medium">{listing.seller_name.split(' ')[0]}</span>
           &nbsp;&bull;&nbsp;
-          <span className="text-[#FF9900]">{'★'.repeat(Math.round(listing.seller_rating))}{'☆'.repeat(5 - Math.round(listing.seller_rating))}</span>
+          <span className="text-[#FF9900]">{'★'.repeat(Math.min(Math.max(Math.round(listing.seller_rating), 0), 5))}{'☆'.repeat(Math.max(5 - Math.min(Math.round(listing.seller_rating), 5), 0))}</span>
           <span className="text-gray-400 ml-1">({Math.round(listing.seller_rating * 12)}+ sales)</span>
         </p>
         {/* Amazon Verified badge */}

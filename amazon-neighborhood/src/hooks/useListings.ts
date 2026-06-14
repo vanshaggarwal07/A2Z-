@@ -1,7 +1,9 @@
 import { useState, useMemo, useEffect, useCallback } from 'react'
 import seedListings from '../data/seed_listings.json'
+import dummyJsonCache from '../data/dummyjson_cache.json'
 import { haversineDistance } from '../lib/haversine'
 import { fetchAllListings, type SupabaseListing } from '../lib/listingsService'
+import { fetchLiveDummyJson, fetchSerpApiProducts, type RawProduct, type SerpProduct } from '../lib/productDataService'
 
 export interface Listing {
   id: string
@@ -150,17 +152,58 @@ function dummyJsonToListing(product: DummyJsonProduct, index: number): Listing {
   }
 }
 
-async function fetchDummyJsonListings(): Promise<Listing[]> {
-  try {
-    const res = await fetch('https://dummyjson.com/products?limit=30&skip=0', { signal: AbortSignal.timeout(8000) })
-    if (!res.ok) return []
-    const data = await res.json()
-    const EXCLUDED_IDS = [17] // Remove specific products
-    return (data.products || [])
-      .filter((p: DummyJsonProduct) => !EXCLUDED_IDS.includes(p.id))
-      .map((p: DummyJsonProduct, i: number) => dummyJsonToListing(p, i))
-  } catch {
-    return []
+// ── Load DummyJSON products from local cache (Tier 1: instant, no network) ──
+
+function loadCachedDummyJsonListings(): Listing[] {
+  return (dummyJsonCache as DummyJsonProduct[])
+    .map((p, i) => dummyJsonToListing(p, i))
+}
+
+const cachedDummyListings = loadCachedDummyJsonListings()
+
+// ── Convert SerpAPI product to Listing ──────────────────────────────────────
+
+function serpProductToListing(sp: SerpProduct, index: number): Listing {
+  const loc = DUMMY_LOCATIONS[index % DUMMY_LOCATIONS.length]
+  const seller = SELLER_NAMES[index % SELLER_NAMES.length]
+  const price = Math.round(sp.price)
+  const originalPrice = Math.round(price / 0.55) // ~45% discount
+
+  return {
+    id: `serp-${index}`,
+    seller_id: `seller-serp-${index}`,
+    seller_name: seller,
+    seller_rating: sp.rating || 4.2,
+    seller_since: 2022,
+    title: sp.title,
+    category: sp.category,
+    original_price: originalPrice,
+    asking_price: price,
+    purchase_date: '2024-01',
+    condition_grade: 'Good',
+    condition_summary: sp.title,
+    defects: [],
+    listing_type: 'resell',
+    images: sp.image ? [sp.image] : ['https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80'],
+    location_lat: loc.lat,
+    location_lng: loc.lng,
+    location_area: loc.area,
+    distance_km: 0,
+    status: 'active',
+    is_local_artisan: false,
+    serial_number: `SN-SERP-${index}`,
+    resale_value_1yr: Math.round(price * 0.5),
+    green_credits: Math.round(price * 0.02) + 10,
+    return_rate_key: null,
+    passport_nodes: [{
+      owner_alias: seller,
+      owned_from: 'Jan 2024',
+      owned_until: null,
+      condition_at_transfer: 'Good',
+      grade_at_transfer: 'Good',
+      reason_for_transfer: 'upgrade',
+      is_original_purchase: true,
+    }],
   }
 }
 
@@ -372,8 +415,8 @@ export function useListings(options: UseListingsOptions = {}) {
 
   const [localListings, setLocalListings] = useState<Listing[]>(globalLocalListings)
   const [supabaseListings, setSupabaseListings] = useState<Listing[]>([])
-  const [dummyJsonListings, setDummyJsonListings] = useState<Listing[]>([])
-  const [dataLoading, setDataLoading] = useState(true)
+  const [extraListings, setExtraListings] = useState<Listing[]>([]) // Tier 2/3 products
+  const [dataLoading, setDataLoading] = useState(false)
 
   // Subscribe to local listing changes (real-time within same browser)
   useEffect(() => {
@@ -394,18 +437,35 @@ export function useListings(options: UseListingsOptions = {}) {
     return () => { cancelled = true }
   }, [])
 
-  // Fetch from DummyJSON (real product data with images, descriptions, reviews)
+  // Tier 2 & 3: Background fetch for additional products
   useEffect(() => {
     let cancelled = false
-    fetchDummyJsonListings().then(listings => {
-      if (!cancelled && listings.length > 0) {
-        setDummyJsonListings(listings)
+    // Try Tier 2: Live DummyJSON for any newer products not in cache
+    fetchLiveDummyJson().then(liveProducts => {
+      if (cancelled) return
+      if (liveProducts.length > cachedDummyListings.length) {
+        // We got more products than cache — add the extras
+        const cachedIds = new Set(cachedDummyListings.map(l => l.id))
+        const newProducts = liveProducts
+          .filter(p => !cachedIds.has(`dj-${p.id}`))
+          .map((p, i) => dummyJsonToListing(p as unknown as DummyJsonProduct, cachedDummyListings.length + i))
+        if (newProducts.length > 0) {
+          setExtraListings(prev => [...prev, ...newProducts])
+        }
       }
+    }).catch(() => {
+      // Tier 2 failed — try Tier 3: SerpAPI
+      if (cancelled) return
+      fetchSerpApiProducts('second hand electronics india').then(serpProducts => {
+        if (cancelled || serpProducts.length === 0) return
+        const serpListings = serpProducts.map((sp, i) => serpProductToListing(sp, i))
+        setExtraListings(prev => [...prev, ...serpListings])
+      }).catch(() => {})
     })
     return () => { cancelled = true }
   }, [])
 
-  // Combine: Supabase (highest priority) + local + DummyJSON + seed data
+  // Combine: Supabase (highest priority) + local + DummyJSON (cached) + seed data
   // Use stable ordering: each source is internally stable, and we maintain insertion order
   const allListings = useMemo(() => {
     const supabaseIds = new Set(supabaseListings.map(l => l.id))
@@ -425,15 +485,42 @@ export function useListings(options: UseListingsOptions = {}) {
       return sl
     })
     const localFiltered = localListings.filter(l => !supabaseIds.has(l.id))
-    const combined = [...enrichedSupabase, ...localFiltered, ...dummyJsonListings, ...(seedListings as Listing[])]
+    const combined = [...enrichedSupabase, ...localFiltered, ...cachedDummyListings, ...extraListings, ...(seedListings as Listing[])]
     // Deduplicate by id (keep first occurrence)
-    const seen = new Set<string>()
-    return combined.filter(l => {
-      if (seen.has(l.id)) return false
-      seen.add(l.id)
+    const seenIds = new Set<string>()
+    const deduped = combined.filter(l => {
+      if (seenIds.has(l.id)) return false
+      seenIds.add(l.id)
       return true
     })
-  }, [supabaseListings, localListings, dummyJsonListings])
+    // Also deduplicate by similar title (remove near-duplicates)
+    const seenTitleKeys = new Set<string>()
+    const seenProductTypes = new Set<string>()
+    return deduped.filter(l => {
+      // Normalize title: lowercase, remove special chars
+      const normalized = l.title.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim()
+      const words = normalized.split(/\s+/).filter(w => w.length > 2)
+      
+      // Key based on first 2 meaningful words
+      const key2 = words.slice(0, 2).join(' ')
+      if (seenTitleKeys.has(key2)) return false
+      seenTitleKeys.add(key2)
+      
+      // Also check product type keywords — only one per category
+      const productTypes = ['kurta', 'shoes', 'running', 'earphones', 'earphone', 'headphone', 'headphones',
+        'watch', 'jacket', 'purse', 'handbag', 'tote bag', 'stroller', 'monitor', 'baby monitor',
+        'tablet', 'router', 'mixer', 'iron', 'fan', 'kettle']
+      for (const type of productTypes) {
+        if (normalized.includes(type)) {
+          if (seenProductTypes.has(type)) return false
+          seenProductTypes.add(type)
+          break
+        }
+      }
+      
+      return true
+    })
+  }, [supabaseListings, localListings, extraListings])
 
   const filtered = useMemo(() => {
     let list = allListings.map((l) => ({

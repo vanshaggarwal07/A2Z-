@@ -205,7 +205,7 @@ export function VocalForLocal() {
       {/* ── Hero Banner ── */}
       <div className="w-full bg-[#e07b00]" style={{ height: '400px' }}>
         <video
-          src="/voacl for local video.mp4"
+          src="/voacl%20for%20local%20video.mp4"
           autoPlay
           muted
           loop
