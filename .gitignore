@@ -27,6 +27,6 @@ __pycache__/
 venv/
 
 # SMOTE output files
-seller_chatbot_smote_balanced.csv
-seller_chatbot_hf_train.jsonl
-seller_chatbot_groq_finetune.jsonl
+amazon-neighborhood/scripts/seller_chatbot_smote_balanced.csv
+amazon-neighborhood/scripts/seller_chatbot_hf_train.jsonl
+amazon-neighborhood/scripts/seller_chatbot_groq_finetune.jsonl

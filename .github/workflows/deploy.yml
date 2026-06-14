@@ -1,0 +1,69 @@
+name: Deploy to AWS (Free Tier - S3 + CloudFront)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # Manual trigger
+
+env:
+  NODE_VERSION: '20'
+  AWS_REGION: 'us-east-1'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: amazon-neighborhood/package-lock.json
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Install app dependencies
+        working-directory: amazon-neighborhood
+        run: npm ci
+
+      - name: Build app
+        working-directory: amazon-neighborhood
+        run: npm run build
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_GROQ_API_KEY: ${{ secrets.VITE_GROQ_API_KEY }}
+          VITE_HF_API_KEY: ${{ secrets.VITE_HF_API_KEY }}
+          VITE_ELEVEN_LABS_API_KEY: ${{ secrets.VITE_ELEVEN_LABS_API_KEY }}
+          VITE_SERP_API_KEY: ${{ secrets.VITE_SERP_API_KEY }}
+
+      - name: Install CDK dependencies
+        working-directory: amazon-neighborhood/infra
+        run: npm ci
+
+      - name: CDK Bootstrap
+        working-directory: amazon-neighborhood/infra
+        run: npx cdk bootstrap
+
+      - name: CDK Deploy
+        working-directory: amazon-neighborhood/infra
+        run: npx cdk deploy --require-approval never
+
+      - name: Output site URL
+        working-directory: amazon-neighborhood/infra
+        run: |
+          echo "## Deployment Complete! 🚀" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          npx cdk outputs --json | jq -r '.AmazonNeighborhoodStack.SiteURL' >> $GITHUB_STEP_SUMMARY
