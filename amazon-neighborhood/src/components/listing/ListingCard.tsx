@@ -148,7 +148,7 @@ export function ListingCard({ listing }: { listing: Listing }) {
         </p>
         {/* Open Box Delivery badge */}
         <p className="mt-1 flex items-center gap-1 text-[10px] text-[#067D62] font-medium">
-          <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 2L3 7v6a7 7 0 0014 0V7l-7-5zm0 2.236L5 7.764V13a5 5 0 0010 0V7.764L10 4.236zM8 10h4v2H8v-2z" clipRule="evenodd"/></svg>
+          <img src="/boxxxx.png" alt="Open Box" className="w-3 h-3 object-contain" />
           Open Box Delivery
         </p>
       </div>

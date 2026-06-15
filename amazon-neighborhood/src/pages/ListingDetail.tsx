@@ -485,10 +485,8 @@ export function ListingDetail() {
           {/* Open Box Delivery badge */}
           <div className="border border-[#067D62] rounded-xl p-4 bg-[#f0f9f4] relative group">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-[#067D62] flex items-center justify-center flex-shrink-0">
-                <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                </svg>
+              <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                <img src="/boxxxx.png" alt="Open Box" className="w-10 h-10 object-contain" />
               </div>
               <div>
                 <p className="text-sm font-bold text-[#067D62]">Open Box Delivery</p>
@@ -519,10 +517,8 @@ export function ListingDetail() {
 
           {/* Green credits */}
           <div className="flex items-center gap-2 text-sm text-[#0a6245] font-medium bg-[#f0f9f4] border border-[#c3e6cb] rounded-xl px-4 py-3">
-            <div className="w-6 h-6 rounded-full bg-[#0a6245] flex items-center justify-center flex-shrink-0">
-              <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17 8C8 10 5.9 16.17 3.82 19.54c-.23.39-.1.87.27 1.1.37.22.84.09 1.06-.29C7 17 9 13 17 11v3l4-4-4-4v2z"/>
-              </svg>
+            <div className="w-6 h-6 flex items-center justify-center flex-shrink-0">
+              <img src="/hilta hua leaf.gif" alt="Green Credits" className="w-6 h-6 object-contain" />
             </div>
             <span>Buy this and earn <strong>{listing.green_credits} credits</strong> toward your next order</span>
           </div>

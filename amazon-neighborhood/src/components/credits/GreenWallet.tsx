@@ -24,9 +24,7 @@ export function GreenWallet() {
       {/* Balance hero */}
       <div className="bg-[#0a6245] rounded-xl p-6 text-white text-center">
         <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-3">
-          <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M17 8C8 10 5.9 16.17 3.82 19.54c-.23.39-.1.87.27 1.1.37.22.84.09 1.06-.29C7 17 9 13 17 11v3l4-4-4-4v2z"/>
-          </svg>
+          <img src="/hilta hua leaf.gif" alt="Green Credits" className="w-9 h-9 object-contain" />
         </div>
         <p className="text-base font-medium opacity-90">Your Green Credits</p>
         <p className="text-6xl font-bold my-2">{totalCredits}</p>
