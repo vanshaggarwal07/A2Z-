@@ -207,63 +207,18 @@ function serpProductToListing(sp: SerpProduct, index: number): Listing {
   }
 }
 
-// ── Shared global store for user-published listings (localStorage fallback) ─
-const STORAGE_KEY = 'amazon_nh_published_listings'
-const CLEANUP_VERSION_KEY = 'amazon_nh_cleanup_v'
-const CURRENT_CLEANUP_VERSION = '2' // Increment to force a re-clean
+// ── Published listings — Supabase is source of truth ─────────────────────────
+// We keep an in-memory list that gets refreshed from Supabase.
+// publishListing only triggers a re-fetch from Supabase; no localStorage.
 
-function loadLocalListings(): Listing[] {
-  try {
-    // Force cleanup of broken listings from previous versions
-    const cleanupVersion = localStorage.getItem(CLEANUP_VERSION_KEY)
-    if (cleanupVersion !== CURRENT_CLEANUP_VERSION) {
-      // Clear all old local listings that had wrong/placeholder images
-      localStorage.removeItem(STORAGE_KEY)
-      localStorage.setItem(CLEANUP_VERSION_KEY, CURRENT_CLEANUP_VERSION)
-      return []
-    }
-
-    const stored = localStorage.getItem(STORAGE_KEY)
-    if (stored) {
-      let listings = JSON.parse(stored) as Listing[]
-      
-      // Only keep listings with real user-uploaded images (base64) or Supabase URLs
-      listings = listings.filter(l => {
-        if (!l.images || l.images.length === 0) return false
-        return l.images.some(img => 
-          img.startsWith('data:image/') || 
-          img.includes('supabase')
-        )
-      })
-
-      // Remove duplicates by title
-      const seenTitles = new Set<string>()
-      listings = listings.filter(l => {
-        const key = l.title.toLowerCase().trim()
-        if (seenTitles.has(key)) return false
-        seenTitles.add(key)
-        return true
-      })
-
-      saveLocalListings(listings)
-      return listings
-    }
-  } catch { /* ignore */ }
-  return []
-}
-
-function saveLocalListings(listings: Listing[]) {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(listings)) } catch { /* ignore */ }
-}
-
-let globalLocalListings: Listing[] = loadLocalListings()
+let globalLocalListings: Listing[] = []
 let globalListeners: Array<() => void> = []
 
 function notifyListeners() { globalListeners.forEach(fn => fn()) }
 
 export function publishListing(listing: Listing) {
+  // Add to in-memory for instant UI feedback (Supabase already has it via listingsService)
   globalLocalListings = [listing, ...globalLocalListings]
-  saveLocalListings(globalLocalListings)
   notifyListeners()
 }
 
