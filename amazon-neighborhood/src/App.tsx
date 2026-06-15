@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { AppProvider } from './context/AppContext'
 import { AuthProvider } from './context/AuthContext'
+import { LanguageProvider } from './context/LanguageContext'
 import { ProtectedRoute } from './components/auth/ProtectedRoute'
 import { Navbar } from './components/layout/Navbar'
 import { BottomNav } from './components/layout/BottomNav'
@@ -77,7 +78,9 @@ export default function App() {
     <BrowserRouter>
       <AuthProvider>
         <AppProvider>
-          <AppLayout />
+          <LanguageProvider>
+            <AppLayout />
+          </LanguageProvider>
         </AppProvider>
       </AuthProvider>
     </BrowserRouter>

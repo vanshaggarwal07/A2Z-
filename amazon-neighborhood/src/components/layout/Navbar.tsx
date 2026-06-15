@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAppContext } from '../../context/AppContext'
 import { useAuth } from '../../context/AuthContext'
+import { useLanguage, LANGUAGES, type LanguageCode } from '../../context/LanguageContext'
 import { useLocation as useGeoLocation } from '../../hooks/useLocation'
 
 const SEARCH_CATEGORIES = [
@@ -182,6 +183,70 @@ function AllSidebar({ open, onClose }: { open: boolean; onClose: () => void }) {
   )
 }
 
+// ── Language Selector Component ────────────────────────────────────────────────
+function LanguageSelector() {
+  const { language, setLanguage } = useLanguage()
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+
+  // Close on outside click
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false)
+    }
+    if (open) document.addEventListener('mousedown', handleClick)
+    return () => document.removeEventListener('mousedown', handleClick)
+  }, [open])
+
+  return (
+    <div className="relative" ref={ref}>
+      <button
+        onClick={() => setOpen(!open)}
+        className="hidden md:flex items-center gap-1 hover:outline hover:outline-1 hover:outline-white rounded px-2 py-1 transition-all"
+      >
+        <img src="/indian flag.png" alt="IN" className="w-5 h-4 object-cover rounded-sm" />
+        <span className="text-sm font-bold text-white">{language}</span>
+        <svg className="w-2.5 h-2.5 text-gray-400" fill="currentColor" viewBox="0 0 10 6">
+          <path d="M0 0l5 6 5-6H0z"/>
+        </svg>
+      </button>
+
+      {open && (
+        <div className="absolute top-full right-0 mt-1 bg-white border border-gray-200 rounded shadow-xl p-4 w-56 z-50">
+          <p className="font-bold text-sm text-gray-900 mb-2">Change Language</p>
+          {LANGUAGES.map((lang, i) => (
+            <React.Fragment key={lang.code}>
+              {i === 1 && <div className="border-t border-gray-200 my-2" />}
+              <label
+                className={`flex items-center gap-2 text-sm cursor-pointer mb-1.5 ${
+                  language === lang.code ? 'text-gray-900 font-medium' : 'text-gray-700'
+                }`}
+                onClick={() => { setLanguage(lang.code); setOpen(false) }}
+              >
+                <input
+                  type="radio"
+                  name="lang"
+                  checked={language === lang.code}
+                  onChange={() => { setLanguage(lang.code); setOpen(false) }}
+                  className="accent-[#FF9900]"
+                />
+                {lang.nativeName} - {lang.code}
+              </label>
+            </React.Fragment>
+          ))}
+          <div className="border-t border-gray-200 my-2" />
+          <p className="text-xs text-gray-600 flex items-center gap-1">
+            <span>🇮🇳</span> You are shopping on Amazon.in
+          </p>
+          <p className="text-xs text-[#007185] hover:text-[#CC0C39] hover:underline cursor-pointer mt-1">
+            Change country/region
+          </p>
+        </div>
+      )}
+    </div>
+  )
+}
+
 // ── Navbar ─────────────────────────────────────────────────────────────────────
 export function Navbar({ locationArea = 'New Delhi 110001' }: NavbarProps) {
   const [searchQuery, setSearchQuery] = useState('')
@@ -297,59 +362,7 @@ export function Navbar({ locationArea = 'New Delhi 110001' }: NavbarProps) {
           <div className="flex items-center gap-1 flex-shrink-0 ml-1">
 
             {/* Language selector */}
-            <div className="relative group/lang">
-              <button className="hidden md:flex items-center gap-1 hover:outline hover:outline-1 hover:outline-white rounded px-2 py-1 transition-all">
-                <img src="/indian flag.png" alt="IN" className="w-5 h-4 object-cover rounded-sm" />
-                <span className="text-sm font-bold text-white">EN</span>
-                <svg className="w-2.5 h-2.5 text-gray-400" fill="currentColor" viewBox="0 0 10 6">
-                  <path d="M0 0l5 6 5-6H0z"/>
-                </svg>
-              </button>
-              {/* Dropdown */}
-              <div className="absolute top-full right-0 mt-1 bg-white border border-gray-200 rounded shadow-xl p-4 w-56 hidden group-hover/lang:block z-50">
-                <p className="font-bold text-sm text-gray-900 mb-2">Change Language</p>
-                <label className="flex items-center gap-2 text-sm text-gray-800 mb-2 cursor-pointer">
-                  <input type="radio" name="lang" defaultChecked className="accent-[#FF9900]" />
-                  English - EN
-                </label>
-                <div className="border-t border-gray-200 my-2" />
-                <label className="flex items-center gap-2 text-sm text-gray-700 mb-1.5 cursor-pointer">
-                  <input type="radio" name="lang" className="accent-[#FF9900]" />
-                  हिन्दी - HI
-                </label>
-                <label className="flex items-center gap-2 text-sm text-gray-700 mb-1.5 cursor-pointer">
-                  <input type="radio" name="lang" className="accent-[#FF9900]" />
-                  தமிழ் - TA
-                </label>
-                <label className="flex items-center gap-2 text-sm text-gray-700 mb-1.5 cursor-pointer">
-                  <input type="radio" name="lang" className="accent-[#FF9900]" />
-                  తెలుగు - TE
-                </label>
-                <label className="flex items-center gap-2 text-sm text-gray-700 mb-1.5 cursor-pointer">
-                  <input type="radio" name="lang" className="accent-[#FF9900]" />
-                  ಕನ್ನಡ - KN
-                </label>
-                <label className="flex items-center gap-2 text-sm text-gray-700 mb-1.5 cursor-pointer">
-                  <input type="radio" name="lang" className="accent-[#FF9900]" />
-                  മലയാളം - ML
-                </label>
-                <label className="flex items-center gap-2 text-sm text-gray-700 mb-1.5 cursor-pointer">
-                  <input type="radio" name="lang" className="accent-[#FF9900]" />
-                  বাংলা - BN
-                </label>
-                <label className="flex items-center gap-2 text-sm text-gray-700 mb-1.5 cursor-pointer">
-                  <input type="radio" name="lang" className="accent-[#FF9900]" />
-                  मराठी - MR
-                </label>
-                <div className="border-t border-gray-200 my-2" />
-                <p className="text-xs text-gray-600 flex items-center gap-1">
-                  <span>🇮🇳</span> You are shopping on Amazon.in
-                </p>
-                <p className="text-xs text-[#007185] hover:text-[#CC0C39] hover:underline cursor-pointer mt-1">
-                  Change country/region
-                </p>
-              </div>
-            </div>
+            <LanguageSelector />
 
             {/* Green Credits pill */}
             <Link
