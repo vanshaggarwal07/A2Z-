@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="public/images.png" alt="Amazon Neighbourhood" width="200"/>
-</p>
-
 <h1 align="center">🏘️ Amazon Neighbourhood</h1>
 
 <p align="center">
